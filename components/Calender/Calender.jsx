@@ -16,8 +16,10 @@ const Calender = () => {
         setNoteTask(noteDB)
 
     }, [])
-
-    const router = useRouter()
+    
+    const router = useRouter();
+    const [thumbnail, setThumbnail] = useState('')
+    console.log(thumbnail)
     const AddTaskHandle = e => {
         e.preventDefault();
 
@@ -39,6 +41,7 @@ const Calender = () => {
             const noteDB = JSON.parse(localStorage.getItem('event'))
             const noteTask = {
                 id: noteDB?.length || 1,
+                thumbnail,
                 title, color, bg_color, location, name, link, time_from, time_to, note, date: modal?.date, full_date: modal?.full_date
             }
             if (noteDB) {
@@ -82,7 +85,7 @@ const Calender = () => {
             {
                 modal &&
                 <div className='z-[300]'>
-                    <AddNote setShowModal={setShowModal} AddTaskHandle={AddTaskHandle} />
+                    <AddNote setShowModal={setShowModal} AddTaskHandle={AddTaskHandle} setThumbnail={setThumbnail} thumbnail={thumbnail} />
                 </div>
             }
         </div>

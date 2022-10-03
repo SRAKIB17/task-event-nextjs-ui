@@ -24,7 +24,7 @@ const Event = () => {
             <div className='w-full md:w-[593px] md:mx-auto lg:flex lg:flex-row-reverse lg:w-full lg:justify-between lg:pr-[240px] lg:pl-[240px] lg:items-center overflow-hidden'>
                 <div className='lg:w-[50%]'>
                     <div className='md:pt-[88px] lg:w-[500px] lg:h-[500px]'>
-                        <img src="Birthday cake.png" alt="" className='w-full h-full' />
+                        <img src={noteEvent?.thumbnail} alt="" className='w-full h-full' />
                     </div>
                 </div>
 
